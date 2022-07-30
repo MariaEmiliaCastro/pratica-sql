@@ -10,7 +10,7 @@ CREATE TABLE "customers" (
 
 CREATE TABLE "customerAddresses" (
     "id" SERIAL PRIMARY KEY,
-    "customerId" INTEGER NOT NULL REFERENCES "customers"("id"),
+    "customerId" INTEGER UNIQUE NOT NULL REFERENCES "customers"("id"),
     "street" VARCHAR(100) NOT NULL,
     "number" INTEGER,
     "complement" VARCHAR(100),
